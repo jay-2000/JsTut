@@ -18,3 +18,12 @@ but putting a semicolon at the end of the statement is the best as well as safes
 - use strict
 using "use strict" or 'use strict' the modern JS get recognised or modern mode is activated.
 note: Make sure that "use strict" is at the top of your script , otherwise strict mode msy not be enabled.
+
+- Variable
+It is used to store information . a variable is a "named storage" for data To create a variable in JS , use the let Keyword 
+e.g.
+let message;
+we can put some data into it by using the assignment operator "=".
+e.g.
+let message;
+message = "hello";
