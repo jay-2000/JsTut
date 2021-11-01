@@ -32,19 +32,23 @@ we can put some data into it by using the assignment operator "=".
 
 e.g.
 let message;
+
 message = "hello";
 
 The string is now saved into the memory area associated with the variable we can access it using the variable name:
 
 eg.
 let message ;
+
 message = 'hello';
+
 alert(message); // shows the variable's content
 
 To be concise, we can combine the variable declaration and assignment into a single line:
 
 e.g.
 let message = 'Hello!'; // define the variable and assign the value
+
 alert(message); // Hello!
 
 We can also declare multiple variables in one line:
