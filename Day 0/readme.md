@@ -55,3 +55,14 @@ We can also declare multiple variables in one line:
 
 e.g.
 let user = 'John', age = 25, message = 'Hello';
+
+Technically, all these variants do the same thing. So, it’s a matter of personal taste and aesthetics.
+
+var instead of let
+In older scripts, you may also find another keyword: var instead of let:
+
+var message = 'Hello';
+
+The var keyword is almost the same as let. It also declares a variable, but in a slightly different, “old-school” way.
+
+There are subtle differences between let and var, but they do not matter for us yet. We’ll cover them in detail later.
