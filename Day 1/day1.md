@@ -29,3 +29,17 @@ NaN is sticky. Any further operation on NaN returns NaN:
 alert( "not a number" / 2 + 5 ); // NaN
 
 So, if there’s a NaN somewhere in a mathematical expression, it propagates to the whole result.
+
+- Big int
+
+In JavaScript, the “number” type cannot represent integer values larger than (253-1) (that’s 9007199254740991), or less than -(253-1) for negatives. It’s a technical limitation caused by their internal representation.
+
+For most purposes that’s quite enough, but sometimes we need really big numbers, e.g. for cryptography or microsecond-precision timestamps.
+
+BigInt type was recently added to the language to represent integers of arbitrary length.
+
+A BigInt value is created by appending n to the end of an integer:
+
+// the "n" at the end means it's a BigInt
+
+const bigInt = 1234567890123456789012345678901234567890n;
