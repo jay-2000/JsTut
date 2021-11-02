@@ -119,3 +119,21 @@ The expression inside ${…} is evaluated and the result becomes a part of the s
 Please note that this can only be done in backticks. Other quotes don’t have this embedding functionality!
 
 alert( "the result is ${1 + 2}" ); // the result is ${1 + 2} (double quotes do nothing)
+
+- Boolean (logical type)
+
+The boolean type has only two values: true and false.
+
+This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.
+
+For instance:
+
+let nameFieldChecked = true; // yes, name field is checked
+
+let ageFieldChecked = false; // no, age field is not checked
+
+Boolean values also come as a result of comparisons:
+
+let isGreater = 4 > 1;
+
+alert( isGreater ); // true (the comparison result is "yes")
