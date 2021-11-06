@@ -65,3 +65,22 @@ G is the same as G.
 l is the same as l.
 
 o is greater than e. Stop here. The first string is greater.
+
+- Comparison of different types
+
+When comparing values of different types, JavaScript converts the values to numbers.
+
+For example:
+
+alert( '2' > 1 ); // true, string '2' becomes a number 2
+
+alert( '01' == 1 ); // true, string '01' becomes a number 1
+
+For boolean values, true becomes 1 and false becomes 0.
+
+For example:
+
+alert( true == 1 ); // true
+
+alert( false == 0 ); // true
+
