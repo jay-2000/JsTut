@@ -5,7 +5,9 @@ The special null value does not belong to any of the types described above.
 
 It forms a separate type of its own which contains only the null value:
 
+```
 let age = null;
+```
 
 In JavaScript, null is not a “reference to a non-existing object” or a “null pointer” like in some other languages.
 
@@ -20,12 +22,15 @@ The meaning of undefined is “value is not assigned”.
 
 If a variable is declared, but not assigned, then its value is undefined:
 
+```
 let age;
 
 alert(age); // shows "undefined"
+```
 
 Technically, it is possible to explicitly assign undefined to a variable:
 
+```
 let age = 100;
 
 // change the value to undefined
@@ -33,6 +38,7 @@ let age = 100;
 age = undefined;
 
 alert(age); // "undefined"
+```
 
 …But we don’t recommend doing that. Normally, one uses null to assign an “empty” or “unknown” value to a variable, while undefined is reserved as a default initial value for unassigned things.
 
@@ -60,6 +66,7 @@ In other words, it works with parentheses or without them. The result is the sam
 
 The call to typeof x returns a string with the type name:
 
+```
 typeof undefined // "undefined"
 
 typeof 0 // "number"
@@ -77,6 +84,7 @@ typeof Math // "object"  (1)
 typeof null // "object"  (2)
 
 typeof alert // "function"  (3)
+```
 
 The last three lines may need additional explanation:
 
@@ -87,7 +95,9 @@ The result of typeof alert is "function", because alert is a function. We’ll s
 - prompt
 The function prompt accepts two arguments:
 
+```
 result = prompt(title, [default]);
+```
 
 It shows a modal window with a text message, an input field for the visitor, and the buttons OK/Cancel.
 
@@ -109,14 +119,17 @@ The call to prompt returns the text from the input field or null if the input wa
 
 For instance:
 
+```
 let age = prompt('How old are you?', 100);
-
 alert(`You are ${age} years old!`); // You are 100 years old!
+```
 
 - confirm
 The syntax:
 
+```
 result = confirm(question);
+```
 
 The function confirm shows a modal window with a question and two buttons: OK and Cancel.
 
@@ -124,9 +137,10 @@ The result is true if OK is pressed and false otherwise.
 
 For example:
 
+```
 let isBoss = confirm("Are you the boss?");
-
 alert( isBoss ); // true if OK is pressed
+```
 
 - String Conversion
 String conversion happens when we need the string form of a value.
@@ -135,11 +149,14 @@ For example, alert(value) does it to show the value.
 
 We can also call the String(value) function to convert a value to a string:
 
+```
 let value = true;
 alert(typeof value); // boolean
 
 value = String(value); // now value is a string "true"
 alert(typeof value); // string
+```
+
 String conversion is mostly obvious. A false becomes "false", null becomes "null", etc.
 
 - Numeric Conversion
@@ -147,25 +164,27 @@ Numeric conversion happens in mathematical functions and expressions automatical
 
 For example, when division / is applied to non-numbers:
 
+```
 alert( "6" / "2" ); // 3, strings are converted to numbers
+```
 
 We can use the Number(value) function to explicitly convert a value to a number:
 
+```
 let str = "123";
-
 alert(typeof str); // string
-
 let num = Number(str); // becomes a number 123
-
 alert(typeof num); // number
+```
 
 Explicit conversion is usually required when we read a value from a string-based source like a text form but expect a number to be entered.
 
 If the string is not a valid number, the result of such a conversion is NaN. For instance:
 
+```
 let age = Number("an arbitrary string instead of a number");
-
 alert(age); // NaN, conversion failed
+```
 
 Numeric conversion rules:
 
@@ -180,19 +199,19 @@ true and false	1 and 0
 string	Whitespaces from the start and end are removed. If the remaining string is empty, the result is 0. Otherwise, the number is “read” from the string. An error gives NaN.
 Examples:
 
+```
 alert( Number("   123   ") ); // 123
-
 alert( Number("123z") );      // NaN (error reading a number at "z")
-
 alert( Number(true) );        // 1
-
 alert( Number(false) );       // 0
+```
 
 Please note that null and undefined behave differently here: null becomes zero while undefined becomes NaN.
 
 Most mathematical operators also perform such conversion, we’ll see that in the next chapter.
 
 - Boolean Conversion
+
 Boolean conversion is the simplest one.
 
 It happens in logical operations (later we’ll meet condition tests and other similar things) but can also be performed explicitly with a call to Boolean(value).
@@ -203,6 +222,7 @@ Values that are intuitively “empty”, like 0, an empty string, null, undefine
 Other values become true.
 For instance:
 
+```
 alert( Boolean(1) ); // true
 
 alert( Boolean(0) ); // false
@@ -210,3 +230,4 @@ alert( Boolean(0) ); // false
 alert( Boolean("hello") ); // true
 
 alert( Boolean("") ); // false
+```
