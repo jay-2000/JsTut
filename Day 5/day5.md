@@ -542,3 +542,48 @@ let nickName = "Supercoder";
 // shows the first defined value:
 alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 ```
+
+- Comparison with ||
+
+The OR || operator can be used in the same way as ??, as it was described in the previous chapter.
+
+For example, in the code above we could replace ?? with || and still get the same result:
+
+```
+let firstName = null;
+let lastName = null;
+let nickName = "Supercoder";
+
+// shows the first truthy value:
+alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
+```
+
+Historically, the OR || operator was there first. It exists since the beginning of JavaScript, so developers were using it for such purposes for a long time.
+
+On the other hand, the nullish coalescing operator ?? was added to JavaScript only recently, and the reason for that was that people weren’t quite happy with ||.
+
+The important difference between them is that:
+
+|| returns the first truthy value.
+?? returns the first defined value.
+In other words, || doesn’t distinguish between false, 0, an empty string "" and null/undefined. They are all the same – falsy values. If any of these is the first argument of ||, then we’ll get the second argument as the result.
+
+In practice though, we may want to use default value only when the variable is null/undefined. That is, when the value is really unknown/not set.
+
+For example, consider this:
+
+```
+let height = 0;
+
+alert(height || 100); // 100
+alert(height ?? 100); // 0
+```
+
+The height || 100 checks height for being a falsy value, and it’s 0, falsy indeed.
+
+so the result of || is the second argument, 100.
+
+The height ?? 100 checks height for being null/undefined, and it’s not,
+so the result is height “as is”, that is 0.
+
+In practice, the zero height is often a valid value, that shouldn’t be replaced with the default. So ?? does just the right thing.
