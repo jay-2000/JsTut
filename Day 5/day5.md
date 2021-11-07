@@ -705,3 +705,59 @@ do {
 ```
 
 This form of syntax should only be used when you want the body of the loop to execute at least once regardless of the condition being truthy. Usually, the other form is preferred: while(…) {…}.
+
+- The “for” loop
+
+The for loop is more complex, but it’s also the most commonly used loop.
+
+It looks like this:
+
+```
+for (begin; condition; step) {
+  // ... loop body ...
+}
+```
+
+Let’s learn the meaning of these parts by example. The loop below runs alert(i) for i from 0 up to (but not including) 3:
+
+```
+for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+  alert(i);
+}
+```
+Let’s examine the for statement part-by-part:
+
+part		
+begin	let i = 0	Executes once upon entering the loop.
+condition	i < 3	Checked before every loop iteration. If false, the loop stops.
+body	alert(i)	Runs again and again while the condition is truthy.
+step	i++	Executes after the body on each iteration.
+The general loop algorithm works like this:
+
+Run begin
+→ (if condition → run body and run step)
+
+→ (if condition → run body and run step)
+
+→ (if condition → run body and run step)
+
+→ ...
+That is, begin executes once, and then it iterates: after each condition test, body and step are executed.
+
+If you are new to loops, it could help to go back to the example and reproduce how it runs step-by-step on a piece of paper.
+
+Here’s exactly what happens in our case:
+
+```
+// for (let i = 0; i < 3; i++) alert(i)
+
+// run begin
+let i = 0
+// if condition → run body and run step
+if (i < 3) { alert(i); i++ }
+// if condition → run body and run step
+if (i < 3) { alert(i); i++ }
+// if condition → run body and run step
+if (i < 3) { alert(i); i++ }
+// ...finish, because now i == 3
+```
