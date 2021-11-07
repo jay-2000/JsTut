@@ -587,3 +587,31 @@ The height ?? 100 checks height for being null/undefined, and it’s not,
 so the result is height “as is”, that is 0.
 
 In practice, the zero height is often a valid value, that shouldn’t be replaced with the default. So ?? does just the right thing.
+
+- Precedence
+
+The precedence of the ?? operator is about the same as ||, just a bit lower. It equals 5 in the MDN table, while || is 6.
+
+That means that, just like ||, the nullish coalescing operator ?? is evaluated before = and ?, but after most other operations, such as +, *.
+
+So if we’d like to choose a value with ?? in an expression with other operators, consider adding parentheses:
+
+```
+let height = null;
+let width = null;
+
+// important: use parentheses
+let area = (height ?? 100) * (width ?? 50);
+
+alert(area); // 5000
+```
+
+Otherwise, if we omit parentheses, then as * has the higher precedence than ??, it would execute first, leading to incorrect results.
+
+```
+// without parentheses
+let area = height ?? 100 * width ?? 50;
+
+// ...works the same as this (probably not what we want):
+let area = height ?? (100 * width) ?? 50;
+```
